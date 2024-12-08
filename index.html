@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://via.placeholder.com/1920x1080') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            background-color: rgba(6, 85, 16, 0.8);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .main-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 2rem;
+            min-height: 80vh;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            margin: 2rem;
+            background: url('uc.png') no-repeat center center;
+            background-size: cover;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+        }
+        .container h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .container .form-group {
+            margin-bottom: 1rem;
+        }
+        .container .form-group input {
+            width: 100%;
+            padding: 0.7rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .container .btn {
+            display: block;
+            width: 100%;
+            padding: 0.7rem;
+            margin: 0.5rem 0;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .container .btn:hover {
+            background: #0056b3;
+        }
+        .container .btn-social {
+            background: #4267B2;
+        }
+        .container .btn-social-google {
+            background: #DB4437;
+        }
+        .container .btn-social:hover {
+            opacity: 0.9;
+        }
+        .container img {
+            width: 100px;
+            margin: 1rem auto;
+            display: block;
+        }
+        .register-container {
+            display: none;
+        }
+        footer {
+            background-color: rgba(0, 123, 255, 0.8);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+    </style>
+    <script>
+        function showRegisterForm() {
+            document.querySelector('.auth-container').style.display = 'none';
+            document.querySelector('.register-container').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        Welcome to Your Learning Journey
+    </header>
+    <div class="main-container">
+        <div class="container auth-container">
+            <img src="logo.png" alt="Learning Logo">
+            <h2>Welcome</h2>
+            <form action="/signin" method="POST">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Sign In</button>
+            </form>
+
+            <button class="btn" onclick="showRegisterForm()">Sign Up</button>
+
+            <a href="https://www.facebook.com/login.php" class="btn btn-social">Login with Facebook</a>
+            <a href="https://accounts.google.com/signin" class="btn btn-social btn-social-google">Login with Google</a>
+        </div>
+
+        <div class="container register-container">
+            <img src="logo.png" alt="Register Icon">
+            <h2>Register</h2>
+            <form action="/register" method="POST">
+                <div class="form-group">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="family-name">Family Name:</label>
+                    <input type="text" id="family-name" name="family_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Online Learning Platform. All rights reserved.
+    </footer>
+</body>
+</html>
